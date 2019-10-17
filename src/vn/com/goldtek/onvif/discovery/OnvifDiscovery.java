@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.me.javawsdiscovery.DeviceDiscovery;
+//import org.me.javawsdiscovery.DeviceDiscovery;
 
 /**
  * @author th
@@ -26,3 +26,13 @@ public class OnvifDiscovery {
 		return onvifPointers;
 	}
 }
+
+/*
+public class OnvifDiscovery {
+
+  public static Collection<URL> discoverOnvifURLs() {
+    return DeviceDiscovery.discoverWsDevicesAsUrls("^http$", ".*onvif.*");
+  }
+}
+*/
+
