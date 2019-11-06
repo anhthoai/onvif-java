@@ -11,7 +11,7 @@ import java.util.List;
  * @author th
  * @date 2015-06-18
  */
-public class OnvifDiscovery {
+/*public class OnvifDiscovery {
 	public static List<OnvifPointer> discoverOnvifDevices() {
 		final ArrayList<OnvifPointer> onvifPointers = new ArrayList<>();
 		final Collection<URL> urls = DeviceDiscovery.discoverWsDevicesAsUrls("^http$", ".*onvif.*");
@@ -25,14 +25,15 @@ public class OnvifDiscovery {
 		}
 		return onvifPointers;
 	}
-}
+}*/
 
-/*
+
 public class OnvifDiscovery {
 
   public static Collection<URL> discoverOnvifURLs() {
-    return DeviceDiscovery.discoverWsDevicesAsUrls("^http$", ".*onvif.*");
+    //return DeviceDiscovery.discoverWsDevicesAsUrls("^http$", ".*onvif.*");
+    return DeviceDiscovery.discoverWsDevicesAsUrls();
   }
 }
-*/
+
 

@@ -4,12 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ConnectException;
+import java.net.URL;
+import java.util.Collection;
 import java.util.List;
 
 import javax.xml.soap.SOAPException;
 
 import org.onvif.ver10.schema.Profile;
 
+import vn.com.goldtek.onvif.discovery.DeviceDiscovery;
 import vn.com.goldtek.onvif.discovery.OnvifDiscovery;
 import vn.com.goldtek.onvif.discovery.OnvifPointer;
 import vn.com.goldtek.onvif.soap.OnvifDevice;
@@ -23,10 +26,17 @@ public class Main {
 		BufferedReader keyboardInput = new BufferedReader(inputStream);
 		String input, cameraAddress, user, password;
 		
-		List<OnvifPointer> list = OnvifDiscovery.discoverOnvifDevices();
-		for (OnvifPointer p : list) {
-			System.out.println("Camera IP \':" + p.getAddress());
+		Collection<String> devices = DeviceDiscovery.discoverWsDevices();
+		for (String p : devices) {
+			System.out.println("Name:" + p);
 		}
+		
+		Collection<URL> list = DeviceDiscovery.discoverWsDevicesAsUrls();
+		for (URL p : list) {
+			System.out.println("Name, location, address:" + p.getHost() + ":" + p.getPort());
+		}
+		
+		
 
 		try {
 			System.out.println("Please enter camera IP (with port if not 80):");
